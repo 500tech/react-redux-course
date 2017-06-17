@@ -2,7 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
-const Header = ({ title }) => <h1>{ title }</h1>;
+class Header extends React.Component {
+    render() {
+        const { title, addMovie } = this.props;
+
+        return (
+            <div className="header">
+                <h1>{ title }</h1>
+                <input type="text" placeholder="my movie" ref={ (el) => this.input = el } />
+                <div className="button"
+                     onClick={ () => addMovie(this.input.value) }>
+                    add movie
+                </div>
+            </div>
+        );
+    }
+}
 
 const Movie = ({ label }) => <li>{ label }</li>;
 
@@ -25,24 +40,17 @@ class App extends React.Component {
         };
     }
 
-    componentDidMount() {
-        // USING FORCE UPDATE
-        setTimeout(() => {
-            this.state.list.push('Without Limits');
-            this.forceUpdate();
-        }, 1000);
-
-        // USING SET STATE
-        setTimeout(() => {
-            // this.setState({ list: this.state.list.concat('Without Limits') });
-        }, 1000);
-    }
-
+    addMovie = (label) => {
+        this.setState({ list: this.state.list.concat(label) });
+    };
 
     render() {
         return (
             <div>
-                <Header title="favorite movies:" />
+                <Header
+                    title="favorite movies:"
+                    addMovie={ this.addMovie }
+                />
                 <Movies movies={ this.state.list } />
             </div>
         );

@@ -4,9 +4,17 @@ body {
   font-family: sans-serif;
 }
 
+h2 {
+  color: #dadada;
+  margin: 100px auto 0 auto;
+}
+
 h1 {
+  margin: 20px auto;
+}
+
+h1, h2 {
   width: 300px;
-  margin: 100px auto;
   text-align: center;
   text-transform: capitalize;
 }

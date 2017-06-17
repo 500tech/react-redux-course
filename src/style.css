@@ -69,7 +69,7 @@ li:hover {
   width: 260px;
   text-align: center;
   padding: 20px;
-  height: 150px;
+  min-height: 210px;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f46011+0,ef4040+100 */
   background: #f46011; /* Old browsers */
@@ -181,6 +181,8 @@ input[type="text"]:focus, textarea:focus {
 
 li span {
   font-size: 12px;
+  margin-left: 10px;
+  text-transform: uppercase;
   color: #dadada;
   float: right;
   cursor: pointer;

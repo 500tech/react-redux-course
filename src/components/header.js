@@ -8,9 +8,12 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <h1>{ title }</h1>
-                <input type="text" placeholder="my movie" ref={ (el) => this.input = el } />
+                <input type="text" placeholder="my movie"
+                       ref={ (el) => this.label = el } />
+                <textarea placeholder="movie description"
+                          ref={ (el) => this.description = el } />
                 <div className="button"
-                     onClick={ () => addMovie(this.input.value) }>
+                     onClick={ () => addMovie(this.label.value, this.description.value) }>
                     add movie
                 </div>
             </div>

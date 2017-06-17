@@ -4,7 +4,11 @@ import Movie from './movie';
 
 export default class Movies extends React.Component {
     render() {
-        const { movies, deleteMovie } = this.props;
+        const {
+            movies,
+            deleteMovie,
+            selectMovie
+        } = this.props;
 
         return (
             <ul>
@@ -12,6 +16,7 @@ export default class Movies extends React.Component {
                     <Movie label={ movie.label }
                            id={ movie.id }
                            key={ movie.id }
+                           selectMovie={ selectMovie }
                            deleteMovie={ deleteMovie } />) }
             </ul>
         );

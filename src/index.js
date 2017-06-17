@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './style.css';
 
 
-function Header(props) {
-    return React.createElement('h1', null, props.title);
-}
+const Header = ({ title }) => <h1>{ title }</h1>;
+
+const App = () => (
+    <div>
+        <h2>welcome to</h2>
+        <Header title="react and redux course" />
+    </div>
+);
+
 
 ReactDOM.render(
-    React.createElement('div', null, [
-        React.createElement('h2', null, 'welcome to'),
-        React.createElement(Header, { title: 'react and redux course' })
-    ]),
+    <App />,
     document.getElementById('root')
 );

@@ -18,3 +18,17 @@ h1, h2 {
   text-align: center;
   text-transform: capitalize;
 }
+
+ul {
+  width: 300px;
+  margin: 20px auto;
+  list-style: none;
+}
+
+li {
+  width: calc(100% - 40px);
+  background: #e0e0e0;
+  margin: 10px 0;
+  float: left;
+  padding: 20px;
+}

@@ -20,7 +20,7 @@ You can work with your preferred code editor, but we recommend one of the follow
 
 To start and run the base project run the following commands:
 
-    git clone git@github.com:500tech/react-redux-course.git
+    git clone https://github.com/500tech/react-redux-course.git
     cd react-redux-course
     npm install
     npm start

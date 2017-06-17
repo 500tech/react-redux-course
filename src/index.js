@@ -19,7 +19,29 @@ const Movies = ({ movies }) => (
 );
 
 class App extends React.Component {
+    constructor() {
+        super();
+
+        console.log('CONSTRUCTOR');
+    }
+
+    componentWillMount() {
+        console.log('COMPONENT WILL MOUNT');
+    }
+
+    componentDidMount() {
+        console.log('COMPONENT DID MOUNT');
+    }
+
+    // componentWillReceiveProps(nextProps) {}
+    // shouldComponentUpdate() {}
+    // componentWillUpdate() {}
+    // componentDidUpdate() {}
+    // componentWillUnmount() {}
+
     render() {
+        console.log('RENDER');
+
         return (
             <div>
                 <Header title="favorite movies:" />

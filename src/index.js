@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
+import App from './components/app';
+
 ReactDOM.render(
-    React.createElement('h1', null, 'welcome to react & redux course'),
+    <App />,
     document.getElementById('root')
 );

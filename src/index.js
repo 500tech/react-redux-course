@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
+const list = [
+    "Avatar",
+    "Wonder Women",
+    "Titanic"
+];
 
 const Header = ({ title }) => <h1>{ title }</h1>;
 
@@ -9,9 +14,7 @@ const Movie = ({ label }) => <li>{ label }</li>;
 
 const Movies = () => (
     <ul>
-        <Movie label="Avatar" />
-        <Movie label="Wonder Woman" />
-        <Movie label="Titanic" />
+        { list.map(movie => <Movie label={ movie } />) }
     </ul>
 );
 

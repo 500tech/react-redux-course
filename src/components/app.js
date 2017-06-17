@@ -3,6 +3,8 @@ import React from 'react';
 import { GenerateKey } from '../utils/keys';
 import Header from './header';
 import Movies from './movies';
+import Panel from './panel';
+import Details from './details';
 
 export default class App extends React.Component {
     constructor() {
@@ -33,14 +35,19 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Header
-                    title="favorite movies:"
-                    addMovie={ this.addMovie }
-                />
-                <Movies
-                    movies={ this.state.list }
-                    deleteMovie={ this.deleteMovie }
-                />
+                <Panel>
+                    <Header
+                        title="favorite movies:"
+                        addMovie={ this.addMovie }
+                    />
+                    <Movies
+                        movies={ this.state.list }
+                        deleteMovie={ this.deleteMovie }
+                    />
+                </Panel>
+                <Panel>
+                    <Details />
+                </Panel>
             </div>
         );
     }

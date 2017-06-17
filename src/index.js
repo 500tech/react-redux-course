@@ -12,18 +12,22 @@ const Header = ({ title }) => <h1>{ title }</h1>;
 
 const Movie = ({ label }) => <li>{ label }</li>;
 
-const Movies = () => (
+const Movies = ({ movies }) => (
     <ul>
-        { list.map(movie => <Movie label={ movie } />) }
+        { movies.map(movie => <Movie label={ movie } key={ movie } />) }
     </ul>
 );
 
-const App = () => (
-    <div>
-        <Header title="favorite movies:" />
-        <Movies />
-    </div>
-);
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <Header title="favorite movies:" />
+                <Movies movies={ list } />
+            </div>
+        );
+    }
+}
 
 
 ReactDOM.render(

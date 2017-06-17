@@ -19,11 +19,19 @@ class Header extends React.Component {
     }
 }
 
-const Movie = ({ label }) => <li>{ label }</li>;
+const Movie = ({ label, deleteMovie }) => (
+    <li>
+        { label }
+        <span onClick={ () => deleteMovie(label) }>delete</span>
+    </li>
+);
 
-const Movies = ({ movies }) => (
+const Movies = ({ movies, deleteMovie }) => (
     <ul>
-        { movies.map(movie => <Movie label={ movie } key={ movie } />) }
+        { movies.map(movie =>
+            <Movie label={ movie }
+                   key={ movie }
+                   deleteMovie={ deleteMovie } />) }
     </ul>
 );
 
@@ -44,6 +52,10 @@ class App extends React.Component {
         this.setState({ list: this.state.list.concat(label) });
     };
 
+    deleteMovie = (label) => {
+        this.setState({ list: this.state.list.filter(movie => movie !== label) });
+    };
+
     render() {
         return (
             <div>
@@ -51,7 +63,10 @@ class App extends React.Component {
                     title="favorite movies:"
                     addMovie={ this.addMovie }
                 />
-                <Movies movies={ this.state.list } />
+                <Movies
+                    movies={ this.state.list }
+                    deleteMovie={ this.deleteMovie }
+                />
             </div>
         );
     }

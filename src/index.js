@@ -1,8 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './style.css';
 
-ReactDOM.render(
-    React.createElement('h1', null, 'welcome to react & redux course'),
+import RecipesView from './components/RecipesView';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
+const App = () => (
+    <div>
+        <Header />
+        <RecipesView />
+        <Footer />
+    </div>
+);
+
+render(
+    <App />,
     document.getElementById('root')
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { addRecipe } from '../actions/recipes';
 
 class AddRecipe extends React.Component {
     onSubmit(e) {
@@ -25,12 +26,4 @@ AddRecipe.propTypes = {
     addRecipe: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    addRecipe: (title) =>
-        dispatch({ type: 'ADD_RECIPE', title })
-});
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(AddRecipe);
+export default connect(null, { addRecipe })(AddRecipe);

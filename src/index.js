@@ -27,6 +27,19 @@ const reducer = (state, action) => {
                 recipes: newRecipes
             });
 
+        case 'TOGGLE':
+            const updateRecipes = state.recipes.map(recipe =>
+                recipe.id !== action.id
+                    ? recipe
+                    : Object.assign({}, recipe, {
+                        favorite: !recipe.favorite
+                    })
+            );
+
+            return Object.assign({}, state, {
+                recipes: updateRecipes
+            });
+
         default:
             return state;
     }
@@ -36,8 +49,7 @@ const initialState = {
     recipes: [
         { id: getID(), title: 'Waffles', favorite: false },
         { id: getID(), title: 'Omelette', favorite: true },
-        { id: getID(), title: 'Dog Food', favorite: true },
-        { id: getID(), title: 'Pancakes', favorite: true }
+        { id: getID(), title: 'Dog Food', favorite: true }
     ]
 };
 

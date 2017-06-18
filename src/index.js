@@ -1,8 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import InnerFooter from './components/InnerFooter';
+import Footer from './components/Footer';
+
+const App = () => (
+    <div>
+        <section className="todoapp">
+            <Header />
+            <Main />
+            <InnerFooter />
+        </section>
+
+        <Footer />
+    </div>
+);
 
 ReactDOM.render(
-    React.createElement('h1', null, 'welcome to react & redux course'),
+    React.createElement(App),
     document.getElementById('root')
 );

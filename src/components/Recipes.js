@@ -1,6 +1,7 @@
 import React from 'react';
 import Recipe from './Recipe';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Recipes = ({ recipes, toggleFavorite }) => (
     <ul className="recipes">
@@ -15,4 +16,11 @@ Recipes.propTypes = {
     toggleFavorite: PropTypes.func.isRequired
 };
 
-export default Recipes;
+
+// Connect
+const mapStateToProps = (state) => ({
+  recipes: state.recipes,
+  toggleFavorite: () => console.log('Toggle favorite')
+});
+
+export default connect(mapStateToProps)(Recipes);

@@ -9,8 +9,6 @@ class RecipesView extends React.Component {
 
         this.state = {
             recipes: [
-                { id: getID(), title: 'Waffles', favorite: false },
-                { id: getID(), title: 'Omelette', favorite: true }
             ]
         };
 
@@ -43,9 +41,8 @@ class RecipesView extends React.Component {
     render() {
         return (
             <div className="main">
-
                 <div className="pane">
-                    <Recipes recipes={ this.state.recipes } toggleFavorite={ this.toggleFavorite }/>
+                    <Recipes />
                 </div>
 
                 <div className="pane">

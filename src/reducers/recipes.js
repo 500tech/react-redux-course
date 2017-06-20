@@ -1,4 +1,4 @@
-import { ADD_RECIPE, TOGGLE_FAVORITE } from '../consts/action-types';
+import { ADD_RECIPE, TOGGLE_RECIPE, SET_RECIPES } from '../consts/action-types';
 import { getID } from '../lib/ids';
 
 const initialState = [
@@ -34,7 +34,7 @@ const reducer = (recipes = initialState, action) => {
 
             return recipes.concat(newRecipe);
 
-        case TOGGLE_FAVORITE:
+        case TOGGLE_RECIPE:
             return recipes.map(recipe =>
                 recipe.id !== action.id
                     ? recipe
@@ -42,6 +42,9 @@ const reducer = (recipes = initialState, action) => {
                         favorite: !recipe.favorite
                     })
             );
+
+        case SET_RECIPES:
+            return action.payload;
 
         default:
             return recipes;

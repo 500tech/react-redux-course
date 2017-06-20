@@ -1,4 +1,4 @@
-import { SET_NAME } from '../consts/action-types';
+import { SET_USER } from '../consts/action-types';
 
 const initialState = {
     name: undefined
@@ -6,7 +6,7 @@ const initialState = {
 
 const reducer = (user = initialState, action) => {
     switch (action.type) {
-        case SET_NAME:
+        case SET_USER:
             return Object.assign({}, user, {
                 name: action.name
             });

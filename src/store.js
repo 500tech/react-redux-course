@@ -3,8 +3,9 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
 
 import logMiddleware from './middlewares/log';
+import apiMiddleware from './middlewares/api';
 
-const middlewares = [logMiddleware];
+const middlewares = [logMiddleware, apiMiddleware];
 
 const initialState = {
   recipes: [

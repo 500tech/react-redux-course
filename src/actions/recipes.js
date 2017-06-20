@@ -1,13 +1,21 @@
-import * as actions from '../consts/action-types';
+import * as consts from '../consts/action-types';
 
-export const addRecipe = (title, description, favorite = false) => ({
-  type: actions.ADD_RECIPE,
-  title: title.trim(),
-  description: description.trim(),
-  favorite
+export const addRecipe = (id, title, description) => ({
+    type: consts.ADD_RECIPE,
+    id,
+    title,
+    description
 });
 
-export const toggleFavorite = (id) => ({
-  type: actions.TOGGLE_FAVORITE,
-  id
+export const toggleRecipe = (id) => ({
+    type: consts.TOGGLE_RECIPE,
+    id
+});
+
+export const fetchRecipes = () => ({
+    type: consts.API,
+    payload: {
+        url: 'recipes.json',
+        success: consts.SET_RECIPES
+    }
 });

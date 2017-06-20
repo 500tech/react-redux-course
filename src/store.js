@@ -1,6 +1,10 @@
 import { getID } from './lib/ids';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/root';
+
+import logMiddleware from './middlewares/log';
+
+const middlewares = [logMiddleware];
 
 const initialState = {
   recipes: [
@@ -25,7 +29,11 @@ const initialState = {
   ]
 };
 
-const store = createStore(rootReducer, initialState);
+const store = createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(...middlewares)
+);
 
 window.store = store;
 

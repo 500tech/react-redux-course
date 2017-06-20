@@ -147,3 +147,21 @@ form button:hover {
   font-size: 8px;
   margin-bottom: 5px;
 }
+
+.toggle-box {
+    width: 100px;
+    height: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+    line-height: 30px;
+    border: 2px solid #444;
+  color: #000;
+    text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.toggle-box.selected {
+  background: #f77f6c;
+}
